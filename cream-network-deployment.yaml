@@ -4,4 +4,4 @@ parameters:
   name: cream
   region: us-east-1
 tags:
-  - project: cream
+  project: cream
