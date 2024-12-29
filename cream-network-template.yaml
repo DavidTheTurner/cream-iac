@@ -21,5 +21,5 @@ Resources:
     Properties:
       CidrBlock: 10.0.0.0/16
       Tags:
-        - Key: name
+        - Key: Name
           Value: !Sub "${ProjectName}-VPC"
