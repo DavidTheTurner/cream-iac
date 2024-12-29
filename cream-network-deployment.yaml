@@ -1,7 +1,7 @@
 template-file-path: cream-network-template.yaml
 
 parameters:
-  name: cream
-  region: us-east-1
+  ProjectName: cream
+  Region: us-east-1
 tags:
   project: cream
