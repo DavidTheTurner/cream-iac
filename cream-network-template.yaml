@@ -23,3 +23,55 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub "${ProjectName}-VPC"
+
+  PrivateSubnet1: 
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select 
+        - 0
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      CidrBlock: !Select 
+        - 0
+        - !Cidr
+          - !GetAtt VPC.CidrBlock
+          - 4
+          - 8
+
+  PrivateSubnet2: 
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select
+        - 1
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      CidrBlock: !Select 
+        - 1
+        - !Cidr
+          - !GetAtt VPC.CidrBlock
+          - 4
+          - 8
+
+  PublicSubnet1: 
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select 
+        - 0
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      CidrBlock: !Select 
+        - 2
+        - !Cidr
+          - !GetAtt VPC.CidrBlock
+          - 4
+          - 8
+
+  PublicSubnet2: 
+    Type: AWS::EC2::Subnet
+    Properties:
+      AvailabilityZone: !Select
+        - 1
+        - Fn::GetAZs: !Ref 'AWS::Region'
+      CidrBlock: !Select 
+        - 3
+        - !Cidr
+          - !GetAtt VPC.CidrBlock
+          - 4
+          - 8
