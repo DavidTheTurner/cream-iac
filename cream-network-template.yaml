@@ -22,4 +22,4 @@ Resources:
       CidrBlock: 10.0.0.0/16
       Tags:
         - Key: name
-          Value: !Sub "${AWS::ProjectName}-VPC"
+          Value: !Sub "${ProjectName}-VPC"
