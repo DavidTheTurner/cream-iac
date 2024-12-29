@@ -1,0 +1,22 @@
+Description: Network resources for the Cream web app
+
+Parameters:
+
+  ProjectName:
+    Description: Name of project
+    Type: String
+
+  Region:
+    Description: Region in which network resources are deployed
+    Type: String
+    Default: 'us-east-1'
+    AllowedValues:
+      - 'us-east-1'
+
+
+Resources:
+
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: 10.0.0.0/16
