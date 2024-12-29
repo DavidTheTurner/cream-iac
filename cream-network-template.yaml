@@ -36,6 +36,9 @@ Resources:
           - !GetAtt VPC.CidrBlock
           - 4
           - 8
+      Tags:
+        - Key: Name
+          Value: !Sub "${ProjectName}-Private1"
 
   PrivateSubnet2: 
     Type: AWS::EC2::Subnet
@@ -49,6 +52,9 @@ Resources:
           - !GetAtt VPC.CidrBlock
           - 4
           - 8
+      Tags:
+        - Key: Name
+          Value: !Sub "${ProjectName}-Private2"
 
   PublicSubnet1: 
     Type: AWS::EC2::Subnet
@@ -62,6 +68,9 @@ Resources:
           - !GetAtt VPC.CidrBlock
           - 4
           - 8
+      Tags:
+        - Key: Name
+          Value: !Sub "${ProjectName}-Public1"
 
   PublicSubnet2: 
     Type: AWS::EC2::Subnet
@@ -75,3 +84,6 @@ Resources:
           - !GetAtt VPC.CidrBlock
           - 4
           - 8
+      Tags:
+        - Key: Name
+          Value: !Sub "${ProjectName}-Public2"
